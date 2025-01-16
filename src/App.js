@@ -1,9 +1,9 @@
-import './App.css';
+import Body from './components/Body';
 
 function App() {
   return (
-    <div className="h-[100vh] flex items-center justify-center">
-      Namaste Netflix
+    <div>
+        <Body />
     </div>
   );
 }
