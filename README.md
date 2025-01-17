@@ -5,6 +5,11 @@
 - Header
 - Login Form
 - SignUp Form
+- Form Validation
+- useRef hook
+- Firebase Login
+- Firebase Deployment
+- Create SignUp User Account
 
 
 # Features
