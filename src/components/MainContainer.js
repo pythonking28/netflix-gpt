@@ -7,9 +7,7 @@ const MainContainer = () => {
 
     const movies = useSelector(store => store.movies?.nowPlayingMovies)
     if(!movies) return null
-    const mainMovie = movies[Math.floor(Math.random()*movies.length)]
-    console.log(mainMovie)
-    const {id,  original_title, overview} = mainMovie
+    const {id,  original_title, overview} = movies[Math.floor(Math.random()*movies.length)]
   return (
     <div className=''>
         <VideoTitle title={original_title} overview={overview}/>

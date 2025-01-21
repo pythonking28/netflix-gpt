@@ -7,7 +7,7 @@ const VideoBackground = ({movieId}) => {
   useGetTrailerVideo(movieId)
   return (
     <div className='w-full'>
-      <iframe className='w-full aspect-video absolute top-0 -z-10 m-0' src={"https://www.youtube.com/embed/" + trailerVideo?.key+ "?autoplay=1&mute=1&loop=1&playlist="+ trailerVideo?.key +"&cc_load_policy=3&si=7tpjSEJhFzJnlg5x&amp;controls=0&amp&1"} title="YouTube video player"></iframe>
+      <iframe className='w-full aspect-video absolute -top-8 -z-10 ' src={"https://www.youtube.com/embed/" + trailerVideo?.key+ "?autoplay=1&mute=1&loop=1&playlist="+ trailerVideo?.key +"&cc_load_policy=3&si=7tpjSEJhFzJnlg5x&amp;controls=0&amp&1"} title="YouTube video player"></iframe>
     </div>
   )
 }

@@ -1,23 +1,36 @@
-import { useState, useEffect } from 'react'
-import { API_OPTIONS_GET } from './constants'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { addNowPlayingMovies } from './movieSlice'
+import { addNowPlayingMovies, addPopularMovies, addTopRatedMovies, addUpcomingMovies } from './movieSlice'
+import { API_OPTIONS_GET, NowPlaying, TopRated,Popular , Upcoming, movieListBaseURL } from './constants'
 
 
-const useGetMovieList = () => {
-    const [movieList, setMovieList] = useState([])
+
+const useGetMovieList = (typeOfMoveList) => {
     const dispatch = useDispatch()
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?page=1';
+    const url = movieListBaseURL+ typeOfMoveList +'?page=1';
     const fetchMovie = async () => {
         const res = await fetch(url, API_OPTIONS_GET)
         const data = await res.json()
-        setMovieList(data)
-        dispatch(addNowPlayingMovies(data.results))
+
+        switch(typeOfMoveList){
+            case NowPlaying:
+                dispatch(addNowPlayingMovies(data.results))
+                break;
+            case Popular:
+                dispatch(addPopularMovies(data.results))
+                break;
+            case TopRated:
+                dispatch(addTopRatedMovies(data.results))
+                break;
+            case Upcoming:
+                dispatch(addUpcomingMovies(data.results))
+                break;
+        }
+        
     }
     useEffect(()=>{
         fetchMovie()
-    },[])
-    return movieList
+    },[typeOfMoveList])
 }
 
 export default useGetMovieList;
