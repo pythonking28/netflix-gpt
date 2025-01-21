@@ -20,7 +20,7 @@ const Header = ({ isLogin }) => {
         })
     }
     return (
-        <div className="relative flex items-center justify-between w-full mt-5 md:mt-0">
+        <div className="relative flex items-center justify-between w-full mt-5 md:mt-0 z-10">
             <img className="h-32 md:h-56 ml-16 md:ml-32 -mt-10" src="/netflix-logo.png" alt="logo" />
            { isLogin && (<div className='relative'>
                 <img onClick={()=>setHideLogOut(!hideLogOut)} className="h-8 md:h-10 mr-16 md:mr-32 -mt-10 rounded-lg cursor-pointer" src={userProfile} alt="profile" />

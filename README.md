@@ -12,6 +12,17 @@
 - Create SignUp User Account
 - Implement Sign In User Api
 - Created Redux Store with userSlice
+- Managed routing for logged in user and not logged in user
+- Environment Variables created for firebase configuration
+- Register TMDB API and get list of movies using its API
+- Custom hook for playing movies
+- create moveSlice
+- Update store with movies data
+- Planning for MainContainer ANd secondary Container
+- Fetch Data for trailer Video
+- Update Store with Trailer Video Data
+- Embed the youtube video and make it autoplay and mute
+- Tailwind classes to make main container look awesome
 
 
 # Features

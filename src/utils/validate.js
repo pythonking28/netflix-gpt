@@ -1,8 +1,10 @@
 
+//eslint-disable-next-line
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 const nameRegex = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/
 export const validateLoginForm = (email, password) => {
+    if(!email || !password) return "Please enter the details"
     const isEmailValid = emailRegex.test(email)
     const isPaswordValid = passwordRegex.test(password)
     if(!isEmailValid) return "Email is not Valid"
@@ -10,6 +12,7 @@ export const validateLoginForm = (email, password) => {
     return null
 }
 export const validateSignUpForm = (name, email, password, confirmPassword) => {
+    if(!email || !password || !name || !confirmPassword) return "Please enter the details"
     const isEmailValid = emailRegex.test(email)
     const isPaswordValid = passwordRegex.test(password)
     const isNameValid = nameRegex.test(name)

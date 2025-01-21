@@ -3,4 +3,12 @@ const userProfile = "https://wallpapers.com/images/hd/netflix-profile-pictures-1
 
 const randomProfileImage = "https://picsum.photos/200"
 
-export {NetflixBackgroundImage, userProfile, randomProfileImage}
+const API_OPTIONS_GET = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${process.env.REACT_APP_TMDB_API_READ_ACESS_TOKEN}`
+    }
+  };
+
+export {NetflixBackgroundImage, userProfile, randomProfileImage, API_OPTIONS_GET}

@@ -10,7 +10,8 @@ import { auth } from '../utils/firebase'
 
 
 const Login = () => {
-    const displayName = useSelector(store => store?.displayName)
+    const displayName = useSelector(store => store?.user?.displayName)
+
     const navigate = useNavigate()
     const [isLogin, setIsLogin] = useState(true);
     const [errMessage, setErrMessage] = useState(null);
@@ -29,13 +30,12 @@ const Login = () => {
         e.preventDefault()
         let isErr = "";
         // validate the form data
-        isErr = isLogin ? validateLoginForm(email.current.value, password.current.value) : validateSignUpForm(name.current.value,email.current.value, password.current.value, confirmPassword.current.value)
-
+        isErr = isLogin ? validateLoginForm(email.current?.value, password.current?.value) : validateSignUpForm(name.current?.value,email.current?.value, password.current?.value, confirmPassword.current?.value)
         setErrMessage(isErr);
 
         if(isErr) return 
         //Sign In and Sign up logic
-        const user = await createAndSignUser(isLogin,setErrMessage,name.current.value, email.current.value, password.current.value)
+        const user = await createAndSignUser(isLogin,setErrMessage,name.current?.value, email.current?.value, password.current?.value)
         user !== undefined ? navigate('/browse') : navigate('/')
    
     }
